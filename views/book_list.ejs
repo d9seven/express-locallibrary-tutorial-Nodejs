@@ -1,0 +1,13 @@
+<h1><%= title %></h1>
+<ul>
+  <% if(book_list.count == 0){ %>
+    <li>There are no books.</li>
+  <% }else{ %>
+    <% book_list.forEach(function(booklist){ %>
+      <li>
+        <a href="<%= booklist.url %>"><%= booklist.title %></a>
+        | <%= booklist.author.name %>
+      </li>
+    <% }); %>
+  <% } %>
+</ul>
