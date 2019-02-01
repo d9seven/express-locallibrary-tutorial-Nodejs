@@ -1,0 +1,9 @@
+<h1><%= title %></h1>
+<form action="" method="POST">
+  <div class="form-group">
+    <label for="name">Genre:</label>
+    <input class="form-control" id="name" type="text" placeholder="Input name genre..." name="name" value=""/>
+  </div>
+  <button class="btn btn-primary" type="submit">Create</button>
+</form>
+<% include ../errors/err_validation %>
