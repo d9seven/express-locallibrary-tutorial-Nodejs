@@ -1,0 +1,7 @@
+<% if(errors){ %>
+  <ul>
+    <% errors.forEach(function(error){ %>
+      <li style="color: red"><%= error.msg %></li>
+    <% }); %>
+  </ul>
+<% } %>

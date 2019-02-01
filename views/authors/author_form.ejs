@@ -1,0 +1,22 @@
+<h1>Create Author</h1>
+<form method="POST" action="">
+  <div class="form-group">
+    <label for="first_name">First Name:</label>
+    <input class="form-control" id="first_name" type="text" placeholder="First name (Christian) last"
+    name="first_name"" value="<%= (author===null ? '' : author.first_name) %>"/>
+    <label for="last_name">Last Name:</label>
+    <input class="form-control" id="last_name" type="text" placeholder="Last name (surname)"
+    name="last_name" value="<%= (author===null ? '' : author.last_name) %>"/>
+  </div>
+  <div class="form-group">
+    <label for="date_of_birth">Date of birth:</label>
+    <input class="form-control" id="date_of_birth" type="date"
+    name="date_of_birth"/>
+  </div>
+  <div class="form-group">
+    <label for="date_of_death">Date of death:</label>
+    <input class="form-control" id="date_of_death" type="date" name="date_of_death"/>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+<% include ../errors/err_validation %>
