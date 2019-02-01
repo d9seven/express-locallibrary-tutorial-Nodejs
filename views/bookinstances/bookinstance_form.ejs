@@ -1,0 +1,35 @@
+<h1><%= title %></h1>
+<form action="" method="POST">
+  <div class="form-group">
+    <label for="book">Book:</label>
+    <select name="book" type="select" id="book" class="form-control">
+      <% book_list.forEach(function(book){ %>
+        <% if(bookinstance){ %>
+          <option value="<%= book._id %>" <%= bookinstance.book.toString()==book._id.toString() ? 'selected' : '' %> ><%= book.title %></option>
+        <% }else{ %>
+          <option value="<%= book._id %>"><%= book.title %></option>
+        <% } %>
+      <% }); %>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="imprint">Imprint:</label>
+    <input type="text" id="imprint" class="form-control" placeholder="Publisher and date information" name="imprint"
+    value="<%= null===bookinstance ? '' : bookinstance.imprint %>">
+  </div>
+  <div class="form-group">
+    <label for="due_back">Date when book available:</label>
+    <input type="date" id="due_back" class="form-control" value="<%= null===bookinstance ? '' : bookinstance.due_back %>">
+  </div>
+  <div class="form-group">
+    <label for="status">Status:</label>
+    <select name="status" id="status" class="form-control" type="select">
+      <option value="Maintenance">Maintenance</option>
+      <option value="Available">Available</option>
+      <option value="Loaned">Loaned</option>
+      <option value="Reserved">Reserved</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+<% include ../errors/err_validation %>
